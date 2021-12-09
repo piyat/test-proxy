@@ -15,11 +15,10 @@ spec:
   source:
     git:
       uri: 'https://github.com/piyat/test-proxy.git'
-    contextDir: server/configuration
+    contextDir: server/build
     type: Git
   strategy:
     dockerStrategy:
-      dockerfilePath: server/Dockerfile
       noCache: true
     type: Docker
   triggers:
