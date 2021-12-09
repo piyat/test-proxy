@@ -5,7 +5,7 @@ RUN apk add --no-cache \
     gettext \
     stunnel
 RUN mkdir -p /etc/stunnel/config /etc/stunnel/pki
-ADD config /etc/stunnel/config/config
+ADD stunnel.conf /etc/stunnel/config/config
 ADD launch.sh /launch.sh
 
 RUN chown -R 1001:0 /etc/stunnel /launch.sh && \
