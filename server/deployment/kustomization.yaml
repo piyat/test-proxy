@@ -10,3 +10,6 @@ generatorOptions:
 resources:
   - is.yaml
   - bc.yaml
+  - dc.yaml
+  - svc.yaml
+  - route.yaml

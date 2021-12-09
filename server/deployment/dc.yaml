@@ -1,0 +1,36 @@
+---
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  name: stunnel
+spec:
+  replicas: 1
+  selector:
+    app: stunnel
+  strategy:
+    type: Rolling
+  template:
+    metadata:
+      labels:
+        app: stunnel
+    spec:
+      containers:
+        - imagePullPolicy: Always
+          livenessProbe: {failureThreshold: 3, initialDelaySeconds: 1, periodSeconds: 10, successThreshold: 1, tcpSocket: {port: 5000}, timeoutSeconds: 1}
+          name: stunnel
+          ports: [{containerPort: 5000, protocol: TCP}]
+          readinessProbe: {failureThreshold: 3, initialDelaySeconds: 1, periodSeconds: 10, successThreshold: 1, tcpSocket: {port: 5000}, timeoutSeconds: 1}
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+  test: false
+  triggers:
+    - type: ConfigChange
+    - imageChangeParams:
+        automatic: true
+        containerNames:
+          - stunnel
+        from:
+          kind: ImageStreamTag
+          name: 'amq-stunnel:latest'
+      type: ImageChange

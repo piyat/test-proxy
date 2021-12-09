@@ -9,7 +9,7 @@ spec:
   output:
     to:
       kind: "ImageStreamTag"
-      name: "amq-stunnel:0.1.0"
+      name: "amq-stunnel:latest"
   successfulBuildsHistoryLimit: 3
   failedBuildsHistoryLimit: 3
   source:
