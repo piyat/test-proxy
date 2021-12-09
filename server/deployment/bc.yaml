@@ -1,0 +1,26 @@
+---
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: amq-stunnel
+  labels:
+    app: stunnel
+spec:
+  output:
+    to:
+      kind: "ImageStreamTag"
+      name: "amq-stunnel:0.1.0"
+  successfulBuildsHistoryLimit: 3
+  failedBuildsHistoryLimit: 3
+  source:
+    git:
+      uri: 'https://bitbucket.org/motabilityoperations/test-proxy'
+    type: Git
+  strategy:
+    dockerStrategy:
+      dockerfilePath: server/Dockerfile
+      noCache: true
+    type: Docker
+  triggers:
+  - type: ConfigChange
+  runPolicy: Serial
