@@ -14,7 +14,8 @@ spec:
   failedBuildsHistoryLimit: 3
   source:
     git:
-      uri: 'https://bitbucket.org/motabilityoperations/test-proxy'
+      uri: 'https://github.com/piyat/test-proxy.git'
+    contextDir: server/configuration
     type: Git
   strategy:
     dockerStrategy:

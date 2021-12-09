@@ -4,8 +4,9 @@ RUN apk add --no-cache \
     ca-certificates \
     gettext \
     stunnel
-ADD configuration/config /etc/stunnel/config/config
-ADD configuration/launch.sh /launch.sh
+RUN mkdir -p /etc/stunnel/config /etc/stunnel/pki
+ADD config /etc/stunnel/config/config
+ADD launch.sh /launch.sh
 
 RUN chown -R 1001:0 /etc/stunnel /launch.sh && \
     chmod -R g+rw /etc/stunnel && \
