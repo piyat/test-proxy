@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 if [ ! -f /etc/stunnel/pki/cert.pem ]; then
     openssl genrsa -out /etc/stunnel/pki/key.pem 2048
