@@ -1,7 +1,8 @@
 FROM alpine:3.15.0
 LABEL stunnel_version="5.60"
 RUN apk add --no-cache \
-    stunnel
+    stunnel \
+    curl
 RUN mkdir -p /etc/stunnel/config
 ADD stunnel.conf /etc/stunnel/config/
 ADD launch.sh /opt/launch.sh

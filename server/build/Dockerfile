@@ -4,7 +4,8 @@ RUN apk add --no-cache \
     ca-certificates \
     openssl \
     gettext \
-    stunnel
+    stunnel \
+    curl
 RUN mkdir -p /etc/stunnel/config /etc/stunnel/pki
 ADD stunnel.conf /etc/stunnel/config/
 ADD launch.sh /opt/launch.sh
