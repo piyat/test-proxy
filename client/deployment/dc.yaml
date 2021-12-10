@@ -16,10 +16,10 @@ spec:
     spec:
       containers:
         - imagePullPolicy: Always
-          livenessProbe: {failureThreshold: 3, initialDelaySeconds: 1, periodSeconds: 10, successThreshold: 1, tcpSocket: {port: 5000}, timeoutSeconds: 1}
+          livenessProbe: {failureThreshold: 3, initialDelaySeconds: 1, periodSeconds: 10, successThreshold: 1, tcpSocket: {port: 5005}, timeoutSeconds: 1}
           name: stunnel
-          ports: [{containerPort: 5000, protocol: TCP}]
-          readinessProbe: {failureThreshold: 3, initialDelaySeconds: 1, periodSeconds: 10, successThreshold: 1, tcpSocket: {port: 5000}, timeoutSeconds: 1}
+          ports: [{containerPort: 5005, protocol: TCP}]
+          readinessProbe: {failureThreshold: 3, initialDelaySeconds: 1, periodSeconds: 10, successThreshold: 1, tcpSocket: {port: 5005}, timeoutSeconds: 1}
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
