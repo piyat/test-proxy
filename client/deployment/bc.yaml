@@ -9,13 +9,13 @@ spec:
   output:
     to:
       kind: "ImageStreamTag"
-      name: "amq-stunnel-server:latest"
+      name: "amq-stunnel-client:latest"
   successfulBuildsHistoryLimit: 3
   failedBuildsHistoryLimit: 3
   source:
     git:
       uri: 'https://github.com/piyat/test-proxy.git'
-    contextDir: server/build
+    contextDir: client/build
     type: Git
   strategy:
     dockerStrategy:

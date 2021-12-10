@@ -32,5 +32,5 @@ spec:
           - stunnel
         from:
           kind: ImageStreamTag
-          name: 'amq-stunnel-server:latest'
+          name: 'amq-stunnel-client:latest'
       type: ImageChange

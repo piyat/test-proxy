@@ -2,11 +2,11 @@
 apiVersion: image.openshift.io/v1
 kind: ImageStream
 metadata:
-  name: amq-stunnel-server
+  name: amq-stunnel-client
   labels:
     app: stunnel
 spec:
   lookupPolicy:
     local: false
 status:
-  dockerImageRepository: image-registry.openshift-image-registry.svc:5000/pa-test/amq-stunnel-server
+  dockerImageRepository: image-registry.openshift-image-registry.svc:5000/pa-test/amq-stunnel-client
