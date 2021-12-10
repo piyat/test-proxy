@@ -6,7 +6,7 @@ if [ ! -f /etc/stunnel/pki/cert.pem ]; then
 fi
 
 if [ -z CONNECT_PORT ]; then
-    sed -i -e "s/5001/${CONNECT_PORT}/" /etc/stunnel/config/config
+    sed -i -e "s/5001/${CONNECT_PORT}/" /etc/stunnel/config/stunnel.conf
 fi
 
-stunnel /etc/stunnel/config/config
+stunnel /etc/stunnel/config/stunnel.conf

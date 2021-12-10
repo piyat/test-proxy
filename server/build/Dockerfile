@@ -2,10 +2,11 @@ FROM alpine:3.15.0
 LABEL stunnel_version="5.60"
 RUN apk add --no-cache \
     ca-certificates \
+    openssl \
     gettext \
     stunnel
 RUN mkdir -p /etc/stunnel/config /etc/stunnel/pki
-ADD stunnel.conf /etc/stunnel/config/config
+ADD stunnel.conf /etc/stunnel/config/
 ADD launch.sh /opt/launch.sh
 
 RUN chown -R 1001:0 /etc/stunnel /opt/launch.sh && \
